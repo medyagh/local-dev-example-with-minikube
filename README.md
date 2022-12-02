@@ -67,15 +67,15 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
     minikube service local-devex-svc
     ```
 
-(for faster developement you can combine steps 3 and 4 the commands in one)
+(for faster development you can combine steps 3 and 4 the commands in one)
 ```
 kubectl delete -f deploy/k8s.yaml;docker rmi local/devex:v1;docker build -t local/devex:v1 .;kubectl apply -f deploy/k8s.yaml
 ```
 
 
-### Mount Files to minikube (persistant storge example)
+### Mount Files to minikube (persistent storage example)
  
-- lets create a example file on our workstation (laptop) to share with our deployement in minikube
+- let's create a example file on our workstation (laptop) to share with our deployment in minikube
 ```console
 mkdir -p ~/Desktop/local-devex
 echo "Hello from laptop" > ~/Desktop/local-devex/hello-world.text
