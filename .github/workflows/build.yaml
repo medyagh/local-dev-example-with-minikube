@@ -35,4 +35,4 @@ jobs:
         run: | 
           minikube service list
           minikube service local-devex-svc --url --wait=10
-          kubectl 
+          kubectl get pods -A
