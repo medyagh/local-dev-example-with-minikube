@@ -2,13 +2,20 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"time"
 )
 
 var version = "0.0.1"
 
 func indexHandler(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "<h1>hello world </h1> \n Version %s\n", version)
+	localFile, err := ioutil.ReadFile("/tmp/data/hello-world.txt")
+	if err != nil {
+		fmt.Printf("couldn't read file %v\n", err)
+
+	}
+	fmt.Fprintf(w, "<h1>hello world </h1> \n Version %s\n File Content:%s", version, localFile)
 }
 
 func headersHandler(w http.ResponseWriter, req *http.Request) {
@@ -24,6 +31,8 @@ func main() {
 
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/headers", headersHandler)
-	fmt.Printf("Starting example version %s Listening on port 8080 ...", version)
+
+	welcomeText := fmt.Sprintf("%s Starting example version %s, Listening on port 8080 ...", time.Now().String(), version)
+	fmt.Println(welcomeText)
 	http.ListenAndServe(":8080", nil)
 }

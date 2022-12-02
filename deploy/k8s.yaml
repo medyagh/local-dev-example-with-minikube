@@ -5,7 +5,7 @@ metadata:
   labels:
     app: local-devex
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: local-devex
@@ -19,6 +19,14 @@ spec:
         image: local/devex:v1
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: /tmp/data
+          name: test-volume
+      volumes:
+        - name: test-volume
+          hostPath:
+            # directory location on host
+            path: /tmp/data
 ---
 apiVersion: v1
 kind: Service

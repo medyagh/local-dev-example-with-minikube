@@ -54,7 +54,8 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
 2. Ensure you're still pointing to minikube's Docker using `minikube docker-env`)
 3. Delete and rebuild the docker image.
     ```console
-    $ docker rmi local/devex:v1;docker build -t local/devex:v1 .
+    docker rmi local/devex:v1
+    docker build -t local/devex:v1 .
     ```
 4. Delete old deployment and re-deploy to Kubernetes
     ```console
@@ -65,3 +66,17 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
     ```console
     minikube service local-devex-svc
     ```
+
+(for faster developement you can combine steps 3 and 4 the commands in one)
+```
+docker rmi local/devex:v1;docker build -t local/devex:v1 .;kubectl delete  -f deploy/k8s.yaml;kubectl apply  -f deploy/k8s.yaml
+```
+
+
+### Mount Files to minikube (presistant storge example)
+ 
+in a seprate window run:
+```console
+ minikube mount ~/Desktop/local-devex:/tmp/data/
+
+```
