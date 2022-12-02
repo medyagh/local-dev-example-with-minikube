@@ -15,7 +15,7 @@ func indexHandler(w http.ResponseWriter, req *http.Request) {
 		fmt.Printf("couldn't read file %v\n", err)
 
 	}
-	fmt.Fprintf(w, "<h1>hello world </h1> \n Version %s\n File Content:%s", version, localFile)
+	fmt.Fprintf(w, "<h1>hello world :) </h1> \n Version %s\n File Content:%s", version, localFile)
 }
 
 func headersHandler(w http.ResponseWriter, req *http.Request) {
