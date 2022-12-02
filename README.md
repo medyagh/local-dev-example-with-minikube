@@ -52,15 +52,15 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
 
 1. Make a change in the code (for example bump the version in `main.go`)
 2. Ensure you're still pointing to minikube's Docker using `minikube docker-env`)
-3. Delete and rebuild the docker image.
+3. Delete the deployment and the image
     ```console
+    kubectl delete -f deploy/k8s.yaml
     docker rmi local/devex:v1
-    docker build -t local/devex:v1 .
     ```
-4. Delete old deployment and re-deploy to Kubernetes
+4. Rebuild the image and re-deploy to Kubernetes
     ```console
-    kubectl delete  -f deploy/k8s.yaml
-    kubectl apply  -f deploy/k8s.yaml
+    docker build -t local/devex:v1 .
+    kubectl apply -f deploy/k8s.yaml
     ```
 5. Access the deployed service in your browser
     ```console
@@ -69,14 +69,13 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
 
 (for faster developement you can combine steps 3 and 4 the commands in one)
 ```
-docker rmi local/devex:v1;docker build -t local/devex:v1 .;kubectl delete  -f deploy/k8s.yaml;kubectl apply  -f deploy/k8s.yaml
+kubectl delete -f deploy/k8s.yaml;docker rmi local/devex:v1;docker build -t local/devex:v1 .;kubectl apply -f deploy/k8s.yaml
 ```
 
 
-### Mount Files to minikube (presistant storge example)
- 
-in a seprate window run:
-```console
- minikube mount ~/Desktop/local-devex:/tmp/data/
+### Mount Files to minikube (persistent storge example)
 
+in a separate window run:
+```console
+minikube mount ~/Desktop/local-devex:/tmp/data/
 ```
