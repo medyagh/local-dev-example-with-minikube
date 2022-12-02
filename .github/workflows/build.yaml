@@ -1,6 +1,7 @@
 name: build
 on:
   workflow_dispatch:
+  push:
   pull_request:
   schedule:
     # every day at 6am & 6pm pacific
