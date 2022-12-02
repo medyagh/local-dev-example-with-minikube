@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-          os: [ubuntu-latest, macos-latest]
+          os: [ubuntu-latest, macos-12]
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     steps:
@@ -18,7 +18,7 @@ jobs:
       - uses: azure/setup-kubectl@v3
       - uses: medyagh/setup-minikube@latest
       - name: install tools for mac os
-        if: matrix.os == 'macos-latest'
+        if: matrix.os == 'macos-12'
         shell: bash
         run: |
           brew install docker-machine docker
