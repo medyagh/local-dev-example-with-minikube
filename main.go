@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
 var version = "0.0.1"
 
 func indexHandler(w http.ResponseWriter, req *http.Request) {
-	localFile, err := ioutil.ReadFile("/tmp/data/hello-world.txt")
+	localFile, err := os.ReadFile("/tmp/data/hello-world.txt")
 	if err != nil {
 		fmt.Printf("couldn't read file %v\n", err)
 
