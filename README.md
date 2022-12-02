@@ -7,8 +7,7 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
 ## Requirements
 - Clone this repo !
 - Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
-- Install [docker cli](https://minikube.sigs.k8s.io/docs/tutorials/docker_desktop_replacement/) (running not Docker Desktop is not needed only docker cli)
-
+- Install [docker cli](https://minikube.sigs.k8s.io/docs/tutorials/docker_desktop_replacement/) (Docker Desktop is not required, only docker cli would be sufficent)
 
 
 ## Build and Deploy app to minikube for first time !
