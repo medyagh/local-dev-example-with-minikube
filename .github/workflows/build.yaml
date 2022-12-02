@@ -17,6 +17,16 @@ jobs:
       - uses: actions/checkout@v2
       - uses: azure/setup-kubectl@v3
       - uses: medyagh/setup-minikube@latest
+      - name: install tools for mac os
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          brew install docker-machine docker
+          sudo docker --version
+          sysctl hw.physicalcpu hw.logicalcpu 
+          sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
+          sudo /usr/libexec/ApplicationFirewall/socketfilterfw -k
+
       - name: Build Docker images inside minikube
         run: | 
           eval $(minikube docker-env)
