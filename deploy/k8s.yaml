@@ -20,13 +20,13 @@ spec:
         ports:
         - containerPort: 8080
         volumeMounts:
-        - mountPath: /tmp/data
+        - mountPath: /data
           name: test-volume
       volumes:
         - name: test-volume
           hostPath:
             # directory location on host
-            path: /tmp/data
+            path: /data
 ---
 apiVersion: v1
 kind: Service

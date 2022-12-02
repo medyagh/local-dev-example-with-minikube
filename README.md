@@ -73,9 +73,15 @@ kubectl delete -f deploy/k8s.yaml;docker rmi local/devex:v1;docker build -t loca
 ```
 
 
-### Mount Files to minikube (persistent storge example)
+### Mount Files to minikube (persistant storge example)
+ 
+- lets create a example file on our workstation (laptop) to share with our deployement in minikube
+```console
+mkdir -p ~/Desktop/local-devex
+echo "Hello from laptop" > ~/Desktop/local-devex/hello-world.text
+```
 
 in a separate window run:
 ```console
-minikube mount ~/Desktop/local-devex:/tmp/data/
+ minikube mount ~/Desktop/local-devex:/data/
 ```
