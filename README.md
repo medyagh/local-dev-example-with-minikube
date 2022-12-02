@@ -41,7 +41,11 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
     ```console
     kubectl apply -f deploy/k8s.yaml
     ```
-
+5. Accees the deployed service in your browser
+    ```console
+    minikube service local-devex-svc
+    ```
+    Tip: you can try `$ minikube service list` to see all exposed serivces.
 
 
 ## Iterative development (how to redeploy after a code change)
@@ -54,6 +58,10 @@ This repo demos a simple go app being deployed to a Kubernetes cluster using min
     ```
 4. Delete old deployment and re-deploy to Kubernetes
     ```console
-    kubectl delete -f deploy/k8s.yaml
-    kubectl apply -f deploy/k8s.yaml
+    kubectl delete  -f deploy/k8s.yaml
+    kubectl apply  -f deploy/k8s.yaml
+    ```
+5. Access the deployed service in your browser
+    ```console
+    minikube service local-devex-svc
     ```
