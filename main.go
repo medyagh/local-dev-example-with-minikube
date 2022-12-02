@@ -5,8 +5,10 @@ import (
 	"net/http"
 )
 
+var version = "0.0.1"
+
 func indexHandler(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "<h1>hello world</h1>\n")
+	fmt.Fprintf(w, "<h1>hello world </h1> \n Version %s\n", version)
 }
 
 func headersHandler(w http.ResponseWriter, req *http.Request) {
@@ -22,6 +24,6 @@ func main() {
 
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/headers", headersHandler)
-	fmt.Println("Listening on port 8080 ...")
+	fmt.Printf("Starting example version %s Listening on port 8080 ...", version)
 	http.ListenAndServe(":8080", nil)
 }
