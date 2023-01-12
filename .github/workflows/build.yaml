@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
-      - uses: azure/setup-kubectl@7f7e5ba5ea3e491b92e6e8e5819963f8f3a1f076
+      - uses: azure/setup-kubectl@e1be5e75ed9741a7c467f4832ecb259a83174311
       - uses: medyagh/setup-minikube@latest
       - name: install tools for mac os
         if: matrix.os == 'macos-12'
