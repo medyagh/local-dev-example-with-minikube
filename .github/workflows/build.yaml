@@ -13,7 +13,7 @@ jobs:
           os: [ubuntu-latest, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
       - uses: azure/setup-kubectl@3e0aec4d80787158d308d7b364cb1b702e7feb7f
       - uses: medyagh/setup-minikube@latest
       - name: install tools for mac os
