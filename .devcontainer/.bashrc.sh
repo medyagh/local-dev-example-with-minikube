@@ -17,7 +17,8 @@ alias kgp='kubectl get pods -A'
 alias kl='kubectl logs'
 alias m="minikube"
 alias ml="minikube profile list"
-alias mda="minikube delete --all"
+alias mld="minikube delete --all"
+alias mk="/workspaces/minikube/out/minikube"
 
 # Update VS Code remote settings to toggle between terminal and IDE layouts.
 vscode_layout() {
@@ -80,6 +81,7 @@ terminal_settings = {
     "workbench.editor.showTabs": "none",
     "workbench.editor.empty.hint": "hidden",
     "workbench.activityBar.location": "hidden",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.statusBar.visible": False,
 }
 
@@ -90,6 +92,7 @@ ide_settings = {
     "workbench.editor.showTabs": "multiple",
     "workbench.editor.empty.hint": "text",
     "workbench.activityBar.location": "default",
+    "workbench.secondarySideBar.defaultVisibility": "visibleInWorkspace",
     "workbench.statusBar.visible": True,
 }
 
