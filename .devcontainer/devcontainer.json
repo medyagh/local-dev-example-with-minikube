@@ -23,15 +23,13 @@
 	"customizations": {
 		"vscode": {
 			"settings": {
-				"workbench.startupEditor": "none",
-				"terminal.integrated.defaultLocation": "panel",
+				"workbench.startupEditor": "terminal",
+				"terminal.integrated.defaultLocation": "editor",
 				"terminal.integrated.tabs.enabled": false,
 				"workbench.editor.showTabs": "none",
 				"workbench.editor.empty.hint": "hidden",
 				"workbench.activityBar.location": "hidden",
 				"workbench.secondarySideBar.defaultVisibility": "hidden",
-				"workbench.panel.defaultLocation": "bottom",
-				"workbench.panel.opensMaximized": "never",
 				"workbench.statusBar.visible": false,
 				"workbench.colorCustomizations": {
 					"terminal.background": "#2b2b2b"
