@@ -1,5 +1,5 @@
 # local-dev-example-with-minikube
-
+[![Try minikube in the browser (needs github login)](https://img.shields.io/badge/Try%20minikube-in%20browser-%23326ce5?logo=kubernetes&logoColor=white)](https://codespaces.new/medyagh/local-dev-example-with-minikube/?quickstart=1)
 
 This repo demos a simple go app being deployed to a Kubernetes cluster using minikube, and demonstrates changing the code and re-deploying a new version.
 
