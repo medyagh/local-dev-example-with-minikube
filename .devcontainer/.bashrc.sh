@@ -20,6 +20,22 @@ alias ml="minikube profile list"
 alias mld="minikube delete --all"
 alias mk="/workspaces/minikube/out/minikube"
 
+if [ -t 1 ]; then
+  cat <<'EOF'
+╔══════════════════════════════════════════════════════════════════════╗
+║  Welcome to minikube in browser offered by Codespaces               ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+To start minikube simply type:
+
+    minikube start
+
+Useful aliases:
+  m          - minikube
+  k          - kubectl
+EOF
+fi
+
 # Update VS Code remote settings to toggle between terminal and IDE layouts.
 vscode_layout() {
   local mode="$1"
