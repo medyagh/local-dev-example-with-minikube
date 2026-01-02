@@ -1,0 +1,37 @@
+{
+	"name": "Local Dev Example With Minikube",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"runArgs": [
+		"--privileged",
+		"--device",
+		"/dev/kvm"
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "latest"
+		},
+		"ghcr.io/devcontainers/features/go:1": {
+			"version": "latest"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"workbench.startupEditor": "terminal",
+				"terminal.integrated.defaultLocation": "editor",
+				"terminal.integrated.tabs.enabled": false,
+				"workbench.editor.showTabs": "none",
+				"workbench.editor.empty.hint": "hidden",
+				"workbench.activityBar.location": "hidden",
+				"workbench.statusBar.visible": false
+			}
+		}
+	},
+	"postCreateCommand": "cat .devcontainer/.bashrc.sh >> $HOME/.bashrc"
+}
